@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css');
 
@@ -26,9 +27,10 @@
   --glass-border: rgba(255, 255, 255, 0.18);
   --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
-  --body-font: 'Pretendard Variable', 'Pretendard', 'Pretendard JP Variable', 'Pretendard JP',
+  --sans-font: 'Pretendard Variable', 'Pretendard', 'Pretendard JP Variable', 'Pretendard JP',
                -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  --heading-font: 'HsSantoki20', var(--body-font);
+  --serif-font: 'Noto Serif KR', 'Noto Serif JP', 'AppleMyungjo', 'Batang', serif;
+  --heading-font: 'HsSantoki20', var(--sans-font);
   --mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
   color-scheme: dark;
@@ -50,9 +52,9 @@ body {
   margin: 0 auto;
   background: var(--panel);
   color: var(--text);
-  font-family: var(--body-font);
+  font-family: var(--serif-font);   /* 본문은 명조 */
   font-size: 1.0625rem;
-  line-height: 1.85;
+  line-height: 1.95;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -76,12 +78,13 @@ summary:focus-visible {
 ::-webkit-scrollbar-thumb { background: #303030; border-radius: 0.5rem; }
 ::-webkit-scrollbar-thumb:hover { background: #404040; }
 
+/* body 안의 스크롤 영역(코드 블록, 긴 수식, 표 등)은 패널 색 */
 body { scrollbar-color: #303030 var(--panel); }
 body *::-webkit-scrollbar-track { background: var(--panel); }
 
 /* ---------- 사이트 로고 ---------- */
 .site-header {
-  display: flex;              /* 로고가 더 이상 텍스트 줄 위에 얹히지 않음 */
+  display: flex;              /* 부모 글자 크기·줄 간격에 영향받지 않게 */
   align-items: center;
   padding: 2rem 2.5rem 0;
   font-size: 1rem;
@@ -89,6 +92,7 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
 }
 
 .site-logo {
+  font-family: var(--sans-font);    /* 로고는 Pretendard 유지 */
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -120,6 +124,7 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
 }
 
 .article-header time {
+  font-family: var(--sans-font);    /* 날짜는 Pretendard 유지 */
   font-size: 0.9375rem;
   color: var(--muted);
 }
@@ -298,7 +303,7 @@ summary.callout-title::marker { color: var(--muted); }
 
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
-  body { font-size: 1rem; line-height: 1.8; }
+  body { font-size: 1rem; line-height: 1.9; }
   .site-header { padding: 1.5rem 1.25rem 0; }
   #content { padding: 2.25rem 1.25rem 4.5rem; }
   .article-header h1 { font-size: 1.875rem; }
