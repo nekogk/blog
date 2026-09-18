@@ -10,7 +10,6 @@ function normalizePath(key) {
   return ('/' + key.replace(/^\/+|\/+$/g, '') + '/');   // 항상 "/2609/fourier/"
 }
 
-// 프론트매터만 떼고, 줄바꿈을 공백으로 바꿔 앞 100자를 자른다.
 function buildPreview(src) {
   const text = src
     .replace(/^\uFEFF?---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
@@ -47,7 +46,7 @@ async function main() {
       .sort((a, b) => b.date.localeCompare(a.date) || b.path.localeCompare(a.path));
 
     if (!posts.length) {
-      listEl.innerHTML = '<p class="list-message">아직 올라온 글이 없습니다.</p>';
+      listEl.innerHTML = '<p class="list-message">아직 올라온 글이 없습니다</p>';
       return;
     }
 
@@ -82,7 +81,7 @@ async function main() {
 
     listEl.querySelectorAll('.post-preview').forEach(el => fillPreview(el, el.dataset.path));
   } catch (err) {
-    listEl.innerHTML = '<p class="list-message">글 목록을 불러오지 못했습니다. index.json 파일의 형식을 확인해 주세요.</p>';
+    listEl.innerHTML = '<p class="list-message">글 목록을 불러오지 못했습니다</p>';
     console.error(err);
   }
 }
