@@ -40,14 +40,14 @@ async function main() {
     listEl.innerHTML = groups.map(g => {
       const y = '20' + g.month.slice(0, 2), m = Number(g.month.slice(2));
       return `
-      <section class="month" aria-label="${y}년 ${m}월">
-        <h2 class="month-code"><time datetime="${y}-${g.month.slice(2)}">${escapeHtml(g.month)}</time></h2>
+      <section class="month">
+        <h2 class="month-code"><time datetime="${y}-${g.month.slice(2)}">${y}년 ${m}월</time></h2>
         <ol class="month-posts">
           ${g.posts.map(p => `
           <li>
             <a href="${p.path}">
               <span class="post-title">${escapeHtml(p.title)}</span>
-              <time class="post-date" datetime="${p.date}">${Number(p.date.slice(5, 7))}월 ${Number(p.date.slice(8, 10))}일</time>
+              <time class="post-date" datetime="${p.date}">${Number(p.date.slice(8, 10))}일</time>
             </a>
           </li>`).join('')}
         </ol>
