@@ -1,0 +1,169 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css');
+
+@font-face {
+  font-family: 'HsSantoki20';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405@1.0/HSSanTokki20-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* ---------- 공통 토큰 (article.css와 동일하게 유지) ---------- */
+:root {
+  --bg: #101010;
+  --panel: #202020;
+  --text: #e6e6e6;
+  --text-strong: #ffffff;
+  --muted: #9a9a9a;
+  --line: #505050;
+  --beige: #eabf8c;
+  --coral: #ed7457;
+  --green: #3a7541;
+  --green-light: #8fc596;
+
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(255, 255, 255, 0.16);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  --body-font: 'Pretendard Variable', 'Pretendard', 'Pretendard JP Variable', 'Pretendard JP',
+               -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --heading-font: 'HsSantoki20', var(--body-font);
+
+  color-scheme: dark;
+  scrollbar-color: #303030 var(--bg);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* body 자체가 가운데 패널 */
+body {
+  max-width: 48rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 1rem;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: normal;
+  color: var(--beige);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--beige);
+  outline-offset: 3px;
+}
+
+/* ---------- 스크롤바 (원래 사이트와 동일) ---------- */
+::-webkit-scrollbar { width: 0.5rem; height: 0.5rem; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #303030; border-radius: 0.5rem; }
+::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+/* ---------- 사이트 로고 ---------- */
+.site-header {
+  padding: 2rem 2.5rem 0;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-strong);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+
+.site-logo img {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+
+/* ---------- 글 목록 ---------- */
+.post-list {
+  padding: 3rem 2.5rem 5rem;
+}
+
+.month + .month { margin-top: 2.75rem; }
+
+.month-code {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.month-posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* 원래 사이트의 .details 유리 카드 */
+.month-posts a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.95rem 1.4rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--glass-shadow);
+  color: var(--text-strong);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.month-posts a:hover { background: var(--glass-hover); }
+
+.post-title {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.post-date {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.list-message {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 560px) {
+  .site-header { padding: 1.5rem 1.25rem 0; }
+  .post-list { padding: 2.25rem 1.25rem 4rem; }
+  .month-code { font-size: 1.75rem; }
+  .month-posts a {
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.85rem 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
