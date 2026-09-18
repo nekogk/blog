@@ -159,6 +159,12 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
 .article-body ol { padding-left: 1.5em; }
 
 .article-body li { margin: 0.25em 0; }
+
+/* 본문 양쪽 정렬 (문단, 목록, 인용, 콜아웃 안의 글) */
+.article-body p,
+.article-body li {
+  text-align: justify;
+}
 .article-body li > ul,
 .article-body li > ol { margin: 0.25em 0 0; }
 

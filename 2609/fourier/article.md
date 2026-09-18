@@ -16,7 +16,7 @@ $$
 \langle f(x), g(x) \rangle  = \sum^n_{i=1}f(x)g(x)
 $$
 
-아직은 함수의 정의역이 자연수 집합의 유한한 부분집합이라는 것을 유의하자. 화분(和分)과 적분의 관계를 생각하면, 방금 정의한 함수의 내적은 화분이다. 하지만 우리는 이를 적분으로 바꿔서, 정의역이 실수 집합의 부분집합, $[-p, p]$인 함수로 확장할 수 있다. 우리의 목표는 푸리에 급수이고, 푸리에 급수는 삼각함수로의 분해이다. 삼각함수로 분해했으니 당연히 이렇게 나타내진 함수는 주기함수가 된다 그렇다면 그 주기 밖의 범위는 생각할 필요가 없다. 이 단위 주기를  $[-p, p]$라 하고, 앞으로 함수들은 모두 $[-p, p]$ 범위에서만 생각하자. 
+아직은 함수의 정의역이 자연수 집합의 유한한 부분집합이라는 것을 유의하자. 화분(和分)과 적분의 관계를 생각하면, 방금 정의한 함수의 내적은 화분이다. 하지만 우리는 이를 적분으로 바꿔서, 정의역이 실수 집합의 부분집합, $[-p, p]$인 함수로 확장할 수 있다. 우리의 목표는 푸리에 급수이고, 푸리에 급수는 삼각함수로의 분해이다. 삼각함수로 분해했으니 당연히 이렇게 나타내진 함수는 주기함수가 된다. 그렇다면 그 주기 밖의 범위는 생각할 필요가 없다. 이 단위 주기를  $[-p, p]$라 하고, 앞으로 함수들은 모두 $[-p, p]$ 범위에서만 생각하자. 
 $$
 \langle f(x), g(x) \rangle  = \int^p_{-p} f(x)g(x) dx
 $$
@@ -40,7 +40,7 @@ $$
 
 차원이란 무엇인가. $n$개의 차원이 있다는 것은, $n$개의 원소가 있는 서로 직교하는 방향들의 집합이 있고, 이 원소들을 조합하여 모든 가능한 벡터를 만들 수 있다는 것이다. 3차원에는 3개의 직교하는 방향, 즉 축이 있다. 함수에서도 이 축을 그려볼 수 있다. 단지 무한 개일 뿐이다. 이 축을 이루는 함수들을 직교 기저 함수라 하고, 이들의 집합을 $\mathcal{E}$이라 쓰자. 
 $$
-\mathcal{E} = \{1\} \cup \{ \cos(\frac{n\pi}{p}x) \vert n \in \mathbb{N} \} \cup \{ \sin(\frac{n\pi}{p}x) \vert n \in \mathbb{N} \}
+\mathcal{E} = \{1\} \cup \{ \cos{n\pi \over p}x \vert n \in \mathbb{N} \} \cup \{ \sin{n\pi \over p}x \vert n \in \mathbb{N} \}
 $$
 
 자연수의 집합은 무한하므로, 직교 기저 함수의 집합도 무한하다. 그렇다면 이들은 과연 축과 같은 성질을 지닐까? 어떤 두개의 함수를 이 집합에서 선택해도 직교할까?
@@ -54,12 +54,10 @@ $$
 
 $\cos$을 적분하면 $\sin$이 나온다. 우리의 식에서, $p, -p$를 넣었을 때 모두 $\sin$은 $0$이 됨을 알 수 있다. 즉 다음의 경우들도 간단하게 $0$임을 보일 수 있다.
 $$
-\langle \sin{n\pi \over p}x, \sin{m\pi \over p}x \rangle = \int^p_{-p} \sin{n\pi \over p}x \sin{m\pi \over p}x  dx =  {1\over 2} \int^p_{-p}  \cos {(n-m) \pi  \over p}x  - \cos {(n+m) \pi \over p}x dx = 0
-$$
-
-그리고,
-$$
 \langle \cos{n\pi \over p}x, \cos{m\pi \over p}x \rangle = \int^p_{-p} \cos{n\pi \over p}x \cos{m\pi \over p}x  dx =  {1\over 2} \int^p_{-p}  \cos {(n-m) \pi  \over p}x  + \cos {(n+m) \pi \over p}x dx = 0
+$$
+$$
+\langle \sin{n\pi \over p}x, \sin{m\pi \over p}x \rangle = \int^p_{-p} \sin{n\pi \over p}x \sin{m\pi \over p}x  dx =  {1\over 2} \int^p_{-p}  \cos {(n-m) \pi  \over p}x  - \cos {(n+m) \pi \over p}x dx = 0
 $$
 
 즉, $\mathcal{E}$의 모든 원소는 서로 직교하는 함수이다.
@@ -75,9 +73,28 @@ $$
 \vec r = \sum^n_{i=1}{\vec r \cdot \vec e_i \over \| \vec e_i\|}\times { \vec e_i\over \| \vec e_i\|} = \sum^n_{i=1}{\vec r \cdot \vec e_i \over \| \vec e_i\|^2}\vec e_i
 $$
 
-이를 자연스럽게 함수에 대해서도 확장해서, $f(x)$는 각 $\mathcal{E}$의 원소, 즉 직교 기저 함수들 $\phi_i(x)$과 그 성분의 크기의 합으로 나타낼 수 있다.
+이를 자연스럽게 함수에 대해서도 확장해서, $f(x)$는 각 $\mathcal{E}$의 원소, 즉 직교 기저 함수들 $\phi_n(x)$과 그 성분의 크기의 합으로 나타낼 수 있다.
 $$
-f(x) = \sum^\infty_{i=1}{\langle f(x) , \phi_i(x) \rangle \over \| \phi_i(x)\|^2}\phi_i(x) 
+f(x) = \sum^\infty_{n=1}{\langle f(x) , \phi_n(x) \rangle \over \| \phi_n(x)\|^2}\phi_n(x) 
 $$
 
-이는 $\phi_i(x)$의 스칼라 배의 합으로 $f(x)$를 나타낸 것이다. $\phi_i(x)$는 모두 삼각함수이거나 상수이므로, $f(x)$는 삼각함수와 상수항의 합으로 분해되었다.
+이는 $\phi_n(x)$의 스칼라 배의 합으로 $f(x)$를 나타낸 것이다. $\phi_i(x)$는 모두 삼각함수이거나 상수이므로, $f(x)$는 삼각함수와 상수항의 합으로 분해되었다.
+
+# 일반화
+푸리에 급수를 구할 때 매번 함수를 내적하고 노름의 제곱으로 나누는 행동을 하기는 힘들기 때문에, 함수의 계수부를 다음과 같이 바꾸어 적는다.
+$$
+f(x) = {a_0 \over 2} + \sum^\infty_{n=1}a_n\cos{n\pi \over p}x + \sum^\infty_{n=1}b_n\sin{n\pi \over p}x
+$$
+
+이 계수들의 값은 다음과 같이 구해진다.
+$$
+a_0 = 2{\langle f(x) , 1 \rangle \over \| 1\|^2} = 2{\int^p_{-p} f(x) dx \over \int^p_{-p} dx} = {1 \over p} \int^p_{-p} f(x) dx
+$$
+$$
+a_n = {\langle f(x) , \cos{n\pi \over p}x \rangle \over \| \cos{n\pi \over p}x\|^2} = {\int^p_{-p} f(x) \cos{n\pi \over p}x dx \over \int^p_{-p} \cos^2{n\pi \over p}x dx} = {1 \over p} \int^p_{-p} f(x) \cos{n\pi \over p} dx
+$$
+$$
+b_n = {\langle f(x) , \sin{n\pi \over p}x \rangle \over \| \sin{n\pi \over p}x\|^2} = {\int^p_{-p} f(x) \sin{n\pi \over p}x dx \over \int^p_{-p} \sin^2{n\pi \over p}x dx} = {1 \over p} \int^p_{-p} f(x) \sin{n\pi \over p} dx
+$$
+
+테일러 급수의 발상이 특정 점에서 무한 번 미분하는 것이였다면, 푸리에 급수의 발상은 함수의 내적을 정의하면 삼각함수들이 직교한다는 것이다. 처음 벡터와 함수의 대응에 대해서 들었을 때는 이것이 푸리에 함수와 관련이 있을 것이라고 생각도 못했다. 이렇게 관련이 없는 것 같아 보이는 것이 관련이 있는 수학이 매력적인 것도 같다.

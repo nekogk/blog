@@ -152,6 +152,9 @@ function restorePlaceholders(html, maths, htmls) {
     const out = katex.renderToString(tex.trim(), { displayMode: display || forceDisplay, throwOnError: false });
     return display ? `<span class="math-display">${out}</span>` : out;
   };
+  // 블록 수식은 그 자체로 한 줄을 차지하므로, 바로 앞뒤의 <br>은 빈 줄만 만든다 → 제거
+  html = html.replace(new RegExp(`(?:<br>\\s*)?(${MATH_OPEN}(\\d+)${MATH_CLOSE})(?:\\s*<br>)?`, 'g'),
+    (whole, ph, i) => (maths[+i].display ? ph : whole));
   // 한 문단 전체가 블록 수식이면 <p>를 벗겨낸다
   html = html.replace(new RegExp(`<p>${MATH_OPEN}(\\d+)${MATH_CLOSE}</p>`, 'g'), (_, i) => render(i));
   return html.replace(new RegExp(`${MATH_OPEN}(\\d+)${MATH_CLOSE}`, 'g'), (_, i) => render(i));
