@@ -38,8 +38,8 @@
 
 html {
   background: var(--bg);
+  scrollbar-gutter: stable;   /* 스크롤바 유무와 상관없이 패널 위치 고정 */
   -webkit-text-size-adjust: 100%;
-  scrollbar-gutter: stable;   /* 스크롤바 자리를 항상 비워둠 */
 }
 
 /* body 자체가 가운데 패널 */
@@ -73,12 +73,13 @@ a:focus-visible {
 ::-webkit-scrollbar-thumb { background: #303030; border-radius: 0.5rem; }
 ::-webkit-scrollbar-thumb:hover { background: #404040; }
 
+/* body 안의 스크롤 영역(코드 블록, 긴 수식, 표 등)은 패널 색 */
 body { scrollbar-color: #303030 var(--panel); }
 body *::-webkit-scrollbar-track { background: var(--panel); }
 
 /* ---------- 사이트 로고 ---------- */
 .site-header {
-  display: flex;              /* 로고가 더 이상 텍스트 줄 위에 얹히지 않음 */
+  display: flex;              /* 부모 글자 크기·줄 간격에 영향받지 않게 */
   align-items: center;
   padding: 2rem 2.5rem 0;
   font-size: 1rem;
@@ -121,31 +122,35 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.6rem;
+  gap: 1rem;
 }
 
 /* 원래 사이트의 .details 유리 카드 */
-.month-posts a {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1.5rem;
-  padding: 0.95rem 1.4rem;
+.post-card {
+  display: block;
+  padding: 1.15rem 1.5rem 1.3rem;
   background: var(--glass);
   border: 1px solid var(--glass-border);
-  border-radius: 1.25rem;
+  border-radius: 2rem;
   box-shadow: var(--glass-shadow);
   color: var(--text-strong);
   text-decoration: none;
   transition: background 0.2s ease;
 }
 
-.month-posts a:hover { background: var(--glass-hover); }
+.post-card:hover { background: var(--glass-hover); }
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.25rem;
+}
 
 .post-title {
-  font-size: 1.0625rem;
-  font-weight: 500;
-  line-height: 1.5;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.35;
 }
 
 .post-date {
@@ -154,6 +159,21 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+
+/* 본문 미리보기: Pretendard, 넘치면 3줄에서 자름 */
+.post-preview {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.post-preview:empty { display: none; }
 
 .list-message {
   margin: 0;
@@ -165,11 +185,12 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   .site-header { padding: 1.5rem 1.25rem 0; }
   .post-list { padding: 2.25rem 1.25rem 4rem; }
   .month-code { font-size: 1.75rem; }
-  .month-posts a {
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: 0.85rem 1.15rem;
+  .post-card {
+    padding: 1rem 1.2rem 1.1rem;
+    border-radius: 1.5rem;
   }
+  .post-title { font-size: 1.3rem; }
+  .post-preview { font-size: 0.9375rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

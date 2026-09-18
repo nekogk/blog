@@ -39,8 +39,8 @@
 
 html {
   background: var(--bg);
+  scrollbar-gutter: stable;   /* 스크롤바 유무와 상관없이 패널 위치 고정 */
   -webkit-text-size-adjust: 100%;
-  scrollbar-gutter: stable;   /* 스크롤바 자리를 항상 비워둠 */
 }
 
 /* body 자체가 가운데 패널 */

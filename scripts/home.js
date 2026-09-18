@@ -1,4 +1,7 @@
-// 홈페이지: /index.json을 읽어 최신순으로 정렬하고, 폴더(2609, 2610...)별로 묶어 보여준다.
+// 홈페이지: /index.json을 읽어 최신순으로 정렬하고, 달별로 묶어 카드로 보여준다.
+// 각 카드에는 article.md의 첫 100자를 그대로 미리보기로 넣는다.
+
+const PREVIEW_CHARS = 100;
 
 const listEl = document.getElementById('post-list');
 
@@ -8,6 +11,28 @@ function escapeHtml(s) {
 
 function normalizePath(key) {
   return ('/' + key.replace(/^\/+|\/+$/g, '') + '/');   // 항상 "/2609/fourier/"
+}
+
+// 프론트매터만 떼고, 줄바꿈을 공백으로 바꿔 앞 100자를 자른다.
+function buildPreview(src) {
+  const text = src
+    .replace(/^\uFEFF?---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const chars = Array.from(text);   // 이모지 같은 문자가 반으로 잘리지 않게
+  return chars.length > PREVIEW_CHARS ? chars.slice(0, PREVIEW_CHARS).join('') + '…' : text;
+}
+
+async function fillPreview(el, path) {
+  try {
+    const res = await fetch(path + 'article.md');
+    if (!res.ok) throw new Error(res.status);
+    const text = buildPreview(await res.text());
+    if (text) el.textContent = text;
+    else el.remove();
+  } catch {
+    el.remove();   // 미리보기를 못 불러와도 제목 카드는 그대로 둔다
+  }
 }
 
 async function main() {
@@ -29,7 +54,7 @@ async function main() {
       return;
     }
 
-    // 정렬 순서를 유지하며 폴더별로 묶기
+    // 정렬 순서를 유지하며 달별로 묶기
     const groups = [];
     for (const p of posts) {
       const last = groups[groups.length - 1];
@@ -37,6 +62,7 @@ async function main() {
       else groups.push({ month: p.month, posts: [p] });
     }
 
+    // 제목 카드를 먼저 그리고, 미리보기는 도착하는 대로 채운다
     listEl.innerHTML = groups.map(g => {
       const y = '20' + g.month.slice(0, 2), m = Number(g.month.slice(2));
       return `
@@ -45,14 +71,19 @@ async function main() {
         <ol class="month-posts">
           ${g.posts.map(p => `
           <li>
-            <a href="${p.path}">
-              <span class="post-title">${escapeHtml(p.title)}</span>
-              <time class="post-date" datetime="${p.date}">${Number(p.date.slice(8, 10))}일</time>
+            <a class="post-card" href="${p.path}">
+              <div class="post-head">
+                <h3 class="post-title">${escapeHtml(p.title)}</h3>
+                <time class="post-date" datetime="${p.date}">${Number(p.date.slice(8, 10))}일</time>
+              </div>
+              <p class="post-preview" data-path="${p.path}"></p>
             </a>
           </li>`).join('')}
         </ol>
       </section>`;
     }).join('');
+
+    listEl.querySelectorAll('.post-preview').forEach(el => fillPreview(el, el.dataset.path));
   } catch (err) {
     listEl.innerHTML = '<p class="list-message">글 목록을 불러오지 못했습니다. index.json 파일의 형식을 확인해 주세요.</p>';
     console.error(err);
