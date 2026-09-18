@@ -1,7 +1,4 @@
-// 홈페이지: /index.json을 읽어 최신순으로 정렬하고, 달별로 묶어 카드로 보여준다.
-// 각 카드에는 article.md의 첫 100자를 그대로 미리보기로 넣는다.
-
-const PREVIEW_CHARS = 100;
+const PREVIEW_CHARS = 96;
 
 const listEl = document.getElementById('post-list');
 
