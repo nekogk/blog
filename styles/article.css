@@ -306,13 +306,3 @@ summary.callout-title::marker { color: var(--muted); }
 
 /* ---------- 오류 메시지 ---------- */
 .load-error { color: var(--muted); }
-
-/* ---------- 모바일 ---------- */
-@media (max-width: 560px) {
-  body { font-size: 1rem; line-height: 1.7; }
-  .site-header { padding: 1.5rem 1.25rem 0; }
-  #content { padding: 2.25rem 1.25rem 4.5rem; }
-  .article-header h1 { font-size: 1.875rem; }
-  .article-body h2 { font-size: 1.5rem; }
-  .article-body h3 { font-size: 1.25rem; }
-}
