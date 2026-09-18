@@ -76,6 +76,9 @@ summary:focus-visible {
 ::-webkit-scrollbar-thumb { background: #303030; border-radius: 0.5rem; }
 ::-webkit-scrollbar-thumb:hover { background: #404040; }
 
+body { scrollbar-color: #303030 var(--panel); }
+body *::-webkit-scrollbar-track { background: var(--panel); }
+
 /* ---------- 사이트 로고 ---------- */
 .site-header {
   display: flex;              /* 로고가 더 이상 텍스트 줄 위에 얹히지 않음 */
