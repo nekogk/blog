@@ -40,6 +40,7 @@
 html {
   background: var(--bg);
   -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;   /* 스크롤바 자리를 항상 비워둠 */
 }
 
 /* body 자체가 가운데 패널 */
@@ -77,7 +78,11 @@ summary:focus-visible {
 
 /* ---------- 사이트 로고 ---------- */
 .site-header {
+  display: flex;              /* 로고가 더 이상 텍스트 줄 위에 얹히지 않음 */
+  align-items: center;
   padding: 2rem 2.5rem 0;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .site-logo {
@@ -87,8 +92,7 @@ summary:focus-visible {
   color: var(--text-strong);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 1.5rem;
   letter-spacing: -0.01em;
 }
 

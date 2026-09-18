@@ -54,6 +54,8 @@ $\cos$을 적분하면 $\sin$이 나온다. 우리의 식에서, $p, -p$를 넣�
 $$
 \langle \sin{n\pi \over p}x, \sin{m\pi \over p}x \rangle = \int^p_{-p} \sin{n\pi \over p}x \sin{m\pi \over p}x  dx =  {1\over 2} \int^p_{-p}  \cos {(n-m) \pi  \over p}x  - \cos {(n+m) \pi \over p}x dx = 0
 $$
+
+그리고,
 $$
 \langle \cos{n\pi \over p}x, \cos{m\pi \over p}x \rangle = \int^p_{-p} \cos{n\pi \over p}x \cos{m\pi \over p}x  dx =  {1\over 2} \int^p_{-p}  \cos {(n-m) \pi  \over p}x  + \cos {(n+m) \pi \over p}x dx = 0
 $$
