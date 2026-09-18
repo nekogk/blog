@@ -185,3 +185,13 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   margin: 0;
   color: var(--muted);
 }
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 560px) {
+  body { font-size: 1rem; line-height: 1.7; }
+  .site-header { padding: 1rem 1.25rem; }
+  #content { padding: 1.5rem 1.25rem 4.5rem; }
+  .article-header h1 { font-size: 1.875rem; }
+  .article-body h2 { font-size: 1.5rem; }
+  .article-body h3 { font-size: 1.25rem; }
+}
