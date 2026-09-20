@@ -3,7 +3,7 @@
 # 친구들
 여기서는 자기소개 사이트가 있는 친구라면 그 사이트를 연결해 두었다.
 
-- [스치(Läie Z. Sthîe)](https://zasoque.org/)
+- [스치(Läie Z. Sthîe)](https://me.shtelo.org/2026/09/cv/)
 - [삼쩌모(halvfjerde)](https://halv.kr/)
 - [다요(dayo)](https://pf.ddayo.me/)
 
