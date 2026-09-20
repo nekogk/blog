@@ -59,7 +59,7 @@ body {
   max-width: 48rem;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 0 0 5rem;
+  padding: 0 0 1rem;
   background: var(--panel);
   scrollbar-color: #303030 var(--panel);
   font-family: var(--serif-font);
@@ -202,7 +202,6 @@ footer {
 
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
-  .container { padding: 0rem 0rem 3rem; }
   body { background: var(--panel); }
   .site-header { padding: 1rem 1.25rem; }
   .post-list { padding: 1.5rem 1.25rem 4rem; }
