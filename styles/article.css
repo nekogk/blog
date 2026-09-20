@@ -41,25 +41,30 @@
 
 html {
   background: var(--bg);
-  scrollbar-gutter: stable;   /* 스크롤바 유무와 상관없이 패널 위치 고정 */
+  scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
 
-/* body 자체가 가운데 패널 */
 body {
-  max-width: 48rem;
-  min-height: 100vh;
-  margin: 0 auto;
-  background: var(--panel);
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
   color: var(--text);
-  font-family: var(--serif-font);   /* 본문은 명조 */
   font-size: 1rem;
   line-height: 1.6;
   word-break: normal;
   overflow-wrap: anywhere;
 }
 
-/* 모든 제목: 산토끼체, 베이지, 밑줄 없음 */
+.container {
+  max-width: 48rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--panel);
+  scrollbar-color: #303030 var(--panel);
+  font-family: var(--serif-font);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   font-weight: normal;
@@ -92,7 +97,7 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
 }
 
 .site-logo {
-  font-family: var(--sans-font);    /* 로고는 Pretendard 유지 */
+  font-family: var(--sans-font);
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
