@@ -59,6 +59,7 @@ body {
   max-width: 48rem;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 0 0 5rem;
   background: var(--panel);
   scrollbar-color: #303030 var(--panel);
   font-family: var(--serif-font);
