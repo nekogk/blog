@@ -309,6 +309,12 @@ summary.callout-title::marker { color: var(--muted); }
 .callout-body { margin-top: 0.4em; }
 .callout-body > :last-child { margin-bottom: 0; }
 
+footer {
+  text-align: center;
+  color: #606060;
+  font-family: var(--serif-font);
+}
+
 /* ---------- 오류 메시지 ---------- */
 .load-error { color: var(--muted); }
 

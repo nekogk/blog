@@ -193,6 +193,12 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   color: var(--muted);
 }
 
+footer {
+  text-align: center;
+  color: #606060;
+  font-family: var(--serif-font);
+}
+
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
   .site-header { padding: 1rem 1.25rem; }
