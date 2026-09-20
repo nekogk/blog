@@ -321,7 +321,8 @@ footer {
 
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
-  body { font-size: 1rem; line-height: 1.7; }
+  body { background: var(--panel); }
+  .container { font-size: 1rem; line-height: 1.7; }
   .site-header { padding: 1rem 1.25rem; }
   #content { padding: 1.5rem 1.25rem 4.5rem; }
   .article-header h1 { font-size: 1.875rem; }
