@@ -20,6 +20,7 @@
   --green: #61c26c;
   --beige: #eabf8c;
   --coral: #ed7457;
+  --pink: #f3a6c0;
 
   --glass: rgba(255, 255, 255, 0.08);
   --glass-hover: rgba(255, 255, 255, 0.16);
@@ -176,7 +177,7 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
 .article-body li::marker { color: var(--muted); }
 
 .article-body a {
-  color: var(--coral);
+  color: var(--pink);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
