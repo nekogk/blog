@@ -16,7 +16,7 @@
 
 하지만 이 둘이 모두 광자로 불리는 데에는 이유가 있다. 이 둘은 명백히 같은 전자기장의 요동침이다. 광자라는 단어는 타당하다. 또한 빛이라는 어근을 전자기에 사용하는 것도 타당하다.
 
-- 빛은 고전어로 /p'wup/이라 하고, 현대어로 Buap이라 한다. 전자기와 관련된 단어는 /p'wup/으로 조어한다.
+- 빛은 고전어로 /p'wup/이라 하고, 현대어로 Buop이라 한다. 전자기와 관련된 단어는 /p'wup/으로 조어한다.
 
 이처럼 전기와 자기를 뜻하는 두 단어를 합치지 않는다면 곤란해지는 단어가 있다. 놀랍게도 전하는 이에 속하지 않는다. 쿨롱 법칙과 만유인력의 법칙의 유사성은 전하 $q$를 질량 $m$과 연결하고 전기장 $\vec E$를 중력장 $\vec g$와 연결한다.
 $$
@@ -67,14 +67,14 @@ $$
 
 즉 표로 정리하면 다음과 같다.
 
-|              | Sñi<br>전기          | Sip<br>자기      | Buap<br>전자기      | Dêun<br>뉴턴 중력         | Fchuo<br>통합 중력        |
+|              | Sñi<br>전기          | Sip<br>자기      | Buop<br>전자기      | Dêun<br>뉴턴 중력         | Fchuo<br>통합 중력        |
 | ------------ | ------------------ | -------------- | ---------------- | ------------------ | -------------------- |
-| Ftrak<br>힘   | Sñiftrak<br>전기력    | Siftrak<br>자기력 | Buaftrak<br>전자기력 | Dêumtrak<br>뉴턴 중력  | Fchuoftrak<br>중력     |
-| Phem<br>장    | Sñiphem<br>전기장     | Siphem<br>자기장  | Buaphem<br>전자기장  | Dêumphem<br>뉴턴 중력장 | Fchuophem<br>중력장     |
+| Ftrak<br>힘   | Sñiftrak<br>전기력    | Siftrak<br>자기력 | Buoftrak<br>전자기력 | Dêumtrak<br>뉴턴 중력  | Fchuoftrak<br>중력     |
+| Phem<br>장    | Sñiphem<br>전기장     | Siphem<br>자기장  | Buophem<br>전자기장  | Dêumphem<br>뉴턴 중력장 | Fchuophem<br>중력장     |
 | Xkian<br>에너지 | Sñixkian<br>전기 에너지 |                |                  | Dêuñkian<br>중력 에너지 |                      |
-| Xtret<br>입자  | Sñixtret<br>대전 입자  |                | Buaftret<br>광자   | Dêuñtret<br>타디온    | Fchuoxtret<br>중력자    |
-| Skiet<br>파동  |                    |                | Buafkiet<br>전자기파 |                    | Fchuoskiet<br>중력파    |
+| Xtret<br>입자  | Sñixtret<br>대전 입자  |                | Buoftret<br>광자   | Dêuñtret<br>타디온    | Fchuoxtret<br>중력자    |
+| Skiet<br>파동  |                    |                | Buofkiet<br>전자기파 |                    | Fchuoskiet<br>중력파    |
 | Muot<br>크기   | Sñimuot<br>전하량     |                |                  | Dêummuot<br>질량     |                      |
-| Fqes<br>세기   | Sñifqes<br>전력      |                | Buafqes<br>복사도   |                    | Fchuofqes<br>중력파 플럭스 |
+| Fqes<br>세기   | Sñifqes<br>전력      |                | Buofqes<br>복사도   |                    | Fchuofqes<br>중력파 플럭스 |
 
 어쩌다 보니 인공어로 인해 필수과목이 아닌 일반물리학 2의 내용을 공부하고 말았다. 개강하던 때에는 이 과목을 안 들어도 된다며 좋아했지만, 꼭 좋은 일이지만은 아니였을지도 모르겠다.
