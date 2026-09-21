@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&display=swap');
 
 @font-face {
   font-family: 'HsSantoki20';
@@ -27,7 +28,7 @@
   --sans-font: 'Pretendard Variable', 'Pretendard', 'Pretendard JP Variable', 'Pretendard JP',
                -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   --serif-font: 'Noto Serif KR', 'Noto Serif JP', 'AppleMyungjo', 'Batang', serif;
-  --heading-font: 'HsSantoki20', var(--sans-font);
+  --heading-font: 'HsSantoki20', '"LXGW Marker Gothic', var(--sans-font);
 
   color-scheme: dark;
   scrollbar-color: #303030 var(--bg);
