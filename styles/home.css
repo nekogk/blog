@@ -28,7 +28,7 @@
   --sans-font: 'Pretendard Variable', 'Pretendard', 'Pretendard JP Variable', 'Pretendard JP',
                -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   --serif-font: 'Noto Serif KR', 'Noto Serif JP', 'AppleMyungjo', 'Batang', serif;
-  --heading-font: 'HsSantoki20', '"LXGW Marker Gothic', var(--sans-font);
+  --heading-font: 'HsSantoki20', 'LXGW Marker Gothic', var(--sans-font);
 
   color-scheme: dark;
   scrollbar-color: #303030 var(--bg);
