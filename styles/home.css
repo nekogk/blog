@@ -169,6 +169,7 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   font-size: 0.875rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+  font-family: var(--sans-font);
 }
 
 /* 본문 미리보기: 명조, 넘치면 3줄에서 자름 */
