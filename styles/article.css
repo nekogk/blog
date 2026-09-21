@@ -260,6 +260,7 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
 
 .article-body th,
 .article-body td {
+  white-space: nowrap;
   padding: 0.55em 0.9em;
   border-bottom: 1px solid var(--line);
   text-align: left;
