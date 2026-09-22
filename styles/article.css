@@ -21,7 +21,7 @@ summary:focus-visible {
 
 .article-header time {
   font-family: var(--sans-font);    /* 날짜는 Pretendard 유지 */
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--muted);
 }
 
@@ -142,7 +142,7 @@ summary:focus-visible {
 
 .article-body table {
   border-collapse: collapse;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   min-width: 100%;
 }
 
@@ -200,20 +200,12 @@ summary.callout-title::marker { color: var(--muted); }
 .callout-body { margin-top: 0.4em; }
 .callout-body > :last-child { margin-bottom: 0; }
 
-footer {
-  text-align: center;
-  color: #606060;
-  font-family: var(--serif-font);
-}
-
 /* ---------- 오류 메시지 ---------- */
 .load-error { color: var(--muted); }
 
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
-  body { background: var(--panel); }
   .container { font-size: 1rem; line-height: 1.7; }
-  .site-header { padding: 1rem 1.25rem; }
   #content { padding: 1.5rem 1.25rem 4.5rem; }
   .article-header h1 { font-size: 1.875rem; }
   .article-body h2 { font-size: 1.5rem; }

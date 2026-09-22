@@ -82,16 +82,8 @@
   color: var(--muted);
 }
 
-footer {
-  text-align: center;
-  color: #606060;
-  font-family: var(--serif-font);
-}
-
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
-  body { background: var(--panel); }
-  .site-header { padding: 1rem 1.25rem; }
   .post-list { padding: 1.5rem 1.25rem 4rem; }
   .month-code { padding-left: 1.2rem; }
   .post-card {
