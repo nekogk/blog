@@ -186,7 +186,6 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   display: flex;              /* 부모 글자 크기·줄 간격에 영향받지 않게 */
   align-items: center;
   padding: 2rem 2.5rem 0;
-  font-size: 1rem;
   line-height: 1;
 }
 
@@ -194,12 +193,11 @@ body *::-webkit-scrollbar-track { background: var(--panel); }
   font-family: var(--sans-font);
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
   color: var(--text-strong);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.5rem;
-  letter-spacing: -0.01em;
 }
 
 .site-logo img {
@@ -218,5 +216,5 @@ footer {
 /* ---------- 모바일 공통 ---------- */
 @media (max-width: 560px) {
   body { background: var(--panel); }
-  .site-header { padding: 1rem 1.25rem; }
+  .site-header { padding: 1rem 1.5rem; }
 }
