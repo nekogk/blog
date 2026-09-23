@@ -2,7 +2,7 @@
 
 /* ---------- 글 목록 ---------- */
 .post-list {
-  padding: 3rem 2.5rem 5rem;
+  padding: 2rem;
 }
 
 .month + .month { margin-top: 2.5rem; }
@@ -82,7 +82,7 @@
 
 /* ---------- 모바일 ---------- */
 @media (max-width: 560px) {
-  .post-list { padding: 1.5rem 1.25rem 3rem; }
+  .post-list { padding: 1rem; }
   .page-title { font-size: 2rem; }
   .post-title { font-size: 1.3rem; }
 }
