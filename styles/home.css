@@ -2,7 +2,7 @@
 
 /* ---------- 글 목록 ---------- */
 .post-list {
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
 .month + .month { margin-top: 2.5rem; }
