@@ -13,7 +13,6 @@
   color: var(--muted);             /* 날짜와 같은 회색 */
   padding-left: 1rem;            /* 카드 안쪽 글자와 같은 선에 맞춤 */
   font-size: 1rem;
-  line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 
@@ -50,7 +49,6 @@
 .post-title {
   margin: 0;
   font-size: 1.6rem;
-  line-height: 1;
 }
 
 .post-date {
@@ -62,7 +60,7 @@
 
 /* 본문 미리보기: 명조, 넘치면 3줄에서 자름 */
 .post-preview {
-  margin: 0.5rem 0 0;
+  margin: 0;
   font-family: var(--sans-font);
   color: var(--text);
   display: -webkit-box;
