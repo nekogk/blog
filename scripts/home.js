@@ -1,5 +1,3 @@
-const PREVIEW_CHARS = 96;
-
 const listEl = document.getElementById('post-list');
 
 function escapeHtml(s) {
@@ -11,12 +9,21 @@ function normalizePath(key) {
 }
 
 function buildPreview(src) {
-  const text = src
-    .replace(/^\uFEFF?---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  const chars = Array.from(text);   // 이모지 같은 문자가 반으로 잘리지 않게
-  return chars.length > PREVIEW_CHARS ? chars.slice(0, PREVIEW_CHARS).join('') + '…' : text;
+  const body = src.replace(/^\uFEFF?---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
+  const out = [];
+  let started = false;   // 본문(제목이 아닌 첫 줄)에 들어섰는지
+
+  for (const line of body.split(/\r?\n/)) {
+    if (/^\s{0,3}#{1,6}\s/.test(line)) {
+      if (!started) continue;   // 글 맨 앞의 제목은 건너뛴다 (카드에 이미 제목이 있으니까)
+      break;                    // 본문 뒤에 다음 #이 나오면 거기서 끝
+    }
+    if (!line.trim()) continue;
+    started = true;
+    out.push(line.trim());
+  }
+
+  return out.join(' ').replace(/\s+/g, ' ').trim();
 }
 
 async function fillPreview(el, path) {
