@@ -72,14 +72,14 @@ $$
 
 즉 표로 정리하면 다음과 같다.
 
-|              | Sñi<br>전기          | Sip<br>자기      | Buop<br>전자기      | Dêun<br>뉴턴 중력         | Fchuo<br>통합 중력        |
-| ------------ | ------------------ | -------------- | ---------------- | ------------------ | -------------------- |
-| Ftrak<br>힘   | Sñiftrak<br>전기력    | Siftrak<br>자기력 | Buoftrak<br>전자기력 | Dêumtrak<br>뉴턴 중력  | Fchuoftrak<br>중력     |
-| Phem<br>장    | Sñiphem<br>전기장     | Siphem<br>자기장  | Buophem<br>전자기장  | Dêumphem<br>뉴턴 중력장 | Fchuophem<br>중력장     |
-| Xkian<br>에너지 | Sñixkian<br>전기 에너지 |                |                  | Dêuñkian<br>중력 에너지 |                      |
-| Xtret<br>입자  | Sñixtret<br>대전 입자  |                | Buoftret<br>광자   | Dêuñtret<br>타디온    | Fchuoxtret<br>중력자    |
-| Skiet<br>파동  |                    |                | Buofkiet<br>전자기파 |                    | Fchuoskiet<br>중력파    |
-| Muot<br>크기   | Sñimuot<br>전하량     |                |                  | Dêummuot<br>질량     |                      |
-| Fqes<br>세기   | Sñifqes<br>전력      |                | Buofqes<br>복사도   |                    | Fchuofqes<br>중력파 플럭스 |
+| | Sñi<br>전기 | Sip<br>자기 | Buop<br>전자기 | Dêun<br>뉴턴 중력 | Fchuo<br>통합 중력 |
+| - | - | - | - | - | - |
+| Ftrak<br>힘 | Sñiftrak<br>전기력 | Siftrak<br>자기력 | Buoftrak<br>전자기력 | Dêumtrak<br>뉴턴 중력 | Fchuoftrak<br>중력 |
+| Phem<br>장 | Sñiphem<br>전기장 | Siphem<br>자기장 | Buophem<br>전자기장 | Dêumphem<br>뉴턴 중력장 | Fchuophem<br>중력장 |
+| Xkian<br>에너지 | Sñixkian<br>전기 에너지 | | | Dêuñkian<br>중력 에너지 | |
+| Xtret<br>입자 | Sñixtret<br>대전 입자 | | Buoftret<br>광자 | Dêuñtret<br>타디온 | Fchuoxtret<br>중력자 |
+| Skiet<br>파동 | | | Buofkiet<br>전자기파 | | Fchuoskiet<br>중력파 |
+| Muot<br>크기 | Sñimuot<br>전하량 | | | Dêummuot<br>질량 | |
+| Fqes<br>세기 | Sñifqes<br>전력 | | Buofqes<br>복사도 | | Fchuofqes<br>중력파 플럭스 |
 
 어쩌다 보니 인공어로 인해 필수과목이 아닌 일반물리학 2의 내용을 공부하고 말았다. 개강하던 때에는 이 과목을 안 들어도 된다며 좋아했지만, 꼭 좋은 일이지만은 아니였을지도 모르겠다.
