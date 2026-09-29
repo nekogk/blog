@@ -115,6 +115,8 @@ summary:focus-visible {
   margin: 0 0 1.5rem;
 }
 
+.article-body table > :first-child > tr:first-child > :is(th, td) { padding-top: 0; }
+
 .article-body th,
 .article-body td {
   white-space: nowrap;
