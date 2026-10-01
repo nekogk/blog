@@ -44,7 +44,7 @@ $$
 
 $$
 \begin{align*}
-r &= \sqrt {y^2 + (c - x)^2} \\ &= a\sqrt{\{{b^2 \over a^2}\sin^2 E + (e - \cos E)^2\}} \\ &= a\sqrt{(\sin^2 E - e^2\sin^2 E + e^2 - 2e\cos E + \cos^2 E)} \\ &= a\sqrt{(1 - 2e\cos E + e^2 \cos^2 E)} \\ &= a(1-e\cos E)
+r &= \sqrt {y^2 + (c - x)^2} \\ &= a\sqrt{ \{ {b^2 \over a^2}\sin^2 E + (e - \cos E)^2 \} } \\ &= a\sqrt{(\sin^2 E - e^2\sin^2 E + e^2 - 2e\cos E + \cos^2 E)} \\ &= a\sqrt{(1 - 2e\cos E + e^2 \cos^2 E)} \\ &= a(1-e\cos E)
 \end{align*}
 $$
 
