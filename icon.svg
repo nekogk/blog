@@ -2,25 +2,29 @@
 <svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <defs>
     <style>
-      .cls-1, .cls-2 {
-        fill: #ed7457;
-      }
-
-      .cls-1, .cls-3 {
+      .cls-1, .cls-2, .cls-3, .cls-4 {
         stroke: #fff;
         stroke-miterlimit: 10;
         stroke-width: 20px;
       }
 
-      .cls-3 {
+      .cls-1, .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-4 {
         fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: #ed7457;
       }
     </style>
   </defs>
-  <rect class="cls-2" x="0" y="-.2675" width="200" height="200" rx="80" ry="80"/>
-  <circle class="cls-3" cx="130" cy="100" r="30"/>
-  <path class="cls-3" d="M160,140c0,16.5685-13.4315,30-30,30s-30-13.4315-30-30"/>
-  <circle class="cls-3" cx="70" cy="100" r="30"/>
-  <line class="cls-1" x1="40" y1="30" x2="40" y2="140"/>
-  <line class="cls-1" x1="160" y1="100" x2="160" y2="140"/>
+  <rect class="cls-5" x="0" y="-.2675" width="200" height="200" rx="80" ry="80"/>
+  <circle class="cls-4" cx="130" cy="100" r="30"/>
+  <circle class="cls-4" cx="70" cy="100" r="30"/>
+  <line class="cls-3" x1="40" y1="40" x2="40" y2="100"/>
+  <line class="cls-2" x1="160" y1="100" x2="160" y2="140"/>
+  <path class="cls-1" d="M160,140c0,16.5685-13.4315,30-30,30-8.2843,0-15.7843-3.3579-21.2132-8.7868"/>
 </svg>
