@@ -75,7 +75,7 @@
   --green: #61c26c;
   --beige: #eabf8c;
   --coral: #ed7457;
-  --pink: #f3a6c0;
+  --red: #d0504f;
 
   --sans-font: 'sansRm','sansSc', 'sansKr', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   --heading-font: 'headSc', 'headKr', var(--sans-font);
@@ -207,13 +207,6 @@ a:focus-visible {
   background: none;
   color: var(--beige);
   font-weight: 700;
-}
-
-.site-search-empty {
-  height: 2rem;
-  line-height: 2rem;
-  padding: 0 0.75rem;
-  color: var(--muted);
 }
 
 .site-logo {

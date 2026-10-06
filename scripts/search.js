@@ -96,8 +96,7 @@ export function initSearch(header) {
       console.error(err);
       if (my !== seq) return;
       results = [];
-      list.innerHTML = '<li class="site-search-empty">목록을 불러오지 못했습니다</li>';
-      list.hidden = false;
+      list.hidden = true;
       return;
     }
     if (my !== seq) return;
@@ -106,10 +105,10 @@ export function initSearch(header) {
     list.innerHTML = results.length
       ? results.map((r, i) => `
         <li id="site-search-opt-${i}" class="site-search-item" role="option" aria-selected="false">
-          <a href="${r.url}">${highlight(r.title, term)}</a>
+          <a href="${r.url}">${label ? `<span class="site-search-kind">${escapeHtml(label)}</span>` : ''}${highlight(r.title, term)}</a>
         </li>`).join('')
-      : '<li class="site-search-empty">검색 결과가 없습니다</li>';
-    list.hidden = false;
+      : '';
+    list.hidden = results.length ? false : true;
     input.setAttribute('aria-expanded', 'true');
     setActive(-1);   // 처음엔 아무것도 강조하지 않음 (Enter는 첫 결과로 이동)
   }
