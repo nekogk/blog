@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   transition: outline 0.2s ease;
-  outline: 2px solid transparent;
+  outline: 1px solid transparent;
   border-radius: 0.2em;
 }
 
@@ -136,7 +136,6 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
 }
 
 /* ── 헤더 검색창 ── */
@@ -217,7 +216,8 @@ a:focus-visible {
 
 .site-logo {
   font-family: var(--sans-font);
-  display: inline-flex; 
+  display: inline-flex;
+  white-space: nowrap;
   gap: 0.5rem;
   color: var(--text-strong);
   text-decoration: none;
