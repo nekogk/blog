@@ -54,7 +54,7 @@
 
 .article-body a:hover { text-decoration-thickness: 2px; }
 
-.wikilink-unresolved { color: var(--muted); }
+.wikilink-unresolved { color: var(--coral); }
 
 .article-body strong {
   font-weight: 700;
