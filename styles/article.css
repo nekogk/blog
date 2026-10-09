@@ -48,13 +48,14 @@
 
 .article-body a {
   color: var(--pink);
+  text-decoration: 0;
+}
+
+.article-body a:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
-
-.article-body a:hover { text-decoration-thickness: 2px; }
-
 .wikilink-unresolved { color: var(--coral); }
 
 .article-body strong {
