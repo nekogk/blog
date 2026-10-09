@@ -24,17 +24,17 @@
 | 哀感如　吾疲　何感　生善<br><small>shixago nyukojige iqenye nipimine caherjeha dagolye katuchige jafiz</small> |
 | 説　吾受　吾心　脳用<br><small>jisusyena ejirye iqeni fasupige daba iko shizuqi rushasho dayoxiji</small> |
 | 自 動　諸易　玄然<br><small>roko rerikadeji luse chizopigeda lisabye shibigeda xyagherchiji nawhoji</small> |
-| 無駄な時間に　未来はあるの？　こんな所に　私はいるの？ |
-| 私のことを　言いたいならば　ことばにするのなら　「ロクデナシ」 |
-| こんな所に　私はいるの？　こんな時間に　私はいるの？ |
-| こんな私も　変われるのなら　もし変われるのなら　白になる |
+| 自 動　諸易　玄然<br><small>roko rerikadeji luse chizopigeda lisabye shibigeda xyagherchiji nawhoji</small> |
+| 冗时間　未有？　是処間　吾有？<br><small>merez meyepedo muxiri liyujize? rizcu meyepedo iqeni liyujize?</small> |
+| 吾関　説　説示　「」<br><small>iqenye moğacede roko ejipegeshi ejirya xishakege jerda "shistobes"</small> |
+| 是処間　吾有？　是时間　吾有？<br><small>rizcu meyepedo iqeni liyujize? rizz meyepedo iqeni liyujize?</small> |
 | 今㒱？　全㒱？　冗論　吾説<br><small>jikodo lirushiro? rugo dalirushiro? meriche eledes iqeniji ejiri</small> |
 | 哀感如　吾疲　何感　生善<br><small>shixago nyukojige iqenye nipimine caherjeha dagolye katuchige jafiz</small> |
 | 説　吾受　吾心　脳用<br><small>jisusyena ejirye iqeni fasupige daba iko shizuqi rushasho dayoxiji</small> |
 | 自　動　諸易　玄然<br><small>roko rerikadeji luse chizopigeda lisabye shibigeda xyagherchiji nawhoji</small> |
-| 動くのならば　動くのならば |
-| すべて壊すわ　すべて壊すわ |
-| 悲しむならば　悲しむならば |
-| 私の心　白く 変われる? |
-| 貴方のことも　私のことも　全ての事も　まだ知らないの |
-| 重い目葢を　開けたのならば　すべて 壊すのなら 黒になれ |
+| 動　動<br><small>roko chizopigeda roko chizopigeda</small> |
+| 諸破　諸破<br><small>lisabye zoshupiz lisabye zoshupiz</small> |
+| 哀　哀<br><small>shixapigesneda shixapigesneda</small> |
+| 心吾　白?<br><small>shizuqi iqenigo libagherjisneda?</small> |
+| 汝関 　吾関　諸関　今知<br><small>senyu moghacheneha iko moghacheneha lisa moghacheneha jiko daasleda</small> |
+| 苦痛眼皮　献　諸破　玄<br><small>jig'ade mucepye chenasegasneda lisabye zoshupegeshi xyagherkesneto</small> |
