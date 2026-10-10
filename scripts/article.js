@@ -28,6 +28,18 @@ md.core.ruler.push('shift_headings', state => {
   }
 });
 
+// 헤더 행의 모든 칸이 비어 있으면 <thead>(와 <th>)를 아예 만들지 않음
+md.core.ruler.push('drop_empty_table_head', state => {
+  const t = state.tokens;
+  for (let i = 0; i < t.length; i++) {
+    if (t[i].type !== 'thead_open') continue;
+    let end = i;
+    while (t[end].type !== 'thead_close') end++;
+    const empty = t.slice(i, end).every(x => x.type !== 'inline' || !x.content.trim());
+    if (empty) t.splice(i, end - i + 1);
+  }
+});
+
 // ---------- 전처리 ----------
 
 function stripFrontmatter(src) {
@@ -77,10 +89,10 @@ const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif|bmp)$/i;
 function resolveWikiTarget(target) {
   const [pathPart, heading] = target.split('#');
   const hash = heading ? '#' + headingId(heading) : '';
-  if (!pathPart) return hash;                              // [[#제목]] : 같은 글 안
+  if (!pathPart) return hash;
   const m = pathPart.replace(/\.md$/, '').match(/^\/?(\d{4})\/([^/]+)/);
-  if (m) return `/${m[1]}/${m[2]}/${hash}`;                // [[2609/fourier/article]]
-  return null;                                              // 어느 글인지 알 수 없음
+  if (m) return `/${m[1]}/${m[2]}/${hash}`;
+  return null;
 }
 
 function transformText(text, base, maths, htmls) {
