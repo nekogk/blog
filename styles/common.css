@@ -142,7 +142,7 @@ a:focus-visible {
 /* ── 헤더 검색창 ── */
 .site-search {
   position: relative;
-  width: 15rem;
+  width: 12rem;
 }
 
 .site-search-input {
@@ -243,10 +243,8 @@ footer {
 }
 
 @media (min-width: 64rem) {
-  /* 목차·#앵커로 이동하면 제목을 맨 위에서 2rem 띄움 (사이드바 top과 대칭) */
   html { scroll-padding-top: 2rem; }
 
-  /* 컨테이너 48rem + 사이드바 16rem을 한 덩어리로 가운데 정렬 */
   body {
     display: flex;
     justify-content: center;
@@ -265,7 +263,6 @@ footer {
     background: var(--bg);
   }
 
-  /* 스크롤해도 그 자리에 머묾 */
   .site-side-inner {
     width: 12rem;
     position: sticky;
@@ -278,14 +275,11 @@ footer {
 
   .site-side-search { flex: none; }
 
-  .site-side .site-search { width: 12rem; }
-
   .site-search-list {
     position: relative;
     margin-top: 1rem;
   }
 
-  /* 목차: 검색 결과와 같은 모양, 길면 안에서 스크롤 */
   .site-toc {
     min-height: 0;
     overflow-y: auto;
@@ -321,7 +315,6 @@ footer {
     transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  /* 번호는 그대로, 제목만 길면 말줄임 */
   .site-toc-num {
     flex: none;
     margin-right: 0.25em;
