@@ -10,7 +10,7 @@
 }
 
 .article-header time {
-  margin: 0.5rem 0 0;
+  margin: 0.2rem 0 0;
   font-family: var(--sans-font);
   color: var(--muted);
 }
