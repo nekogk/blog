@@ -241,3 +241,7 @@ footer {
   .container { padding: 4vw; }
   :root { scrollbar-color: var(--glass) transparent; }
 }
+
+@media (max-width: 40rem) {
+  .site-search { width: 46vw; }
+}
