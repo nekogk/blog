@@ -2,7 +2,7 @@
 // 각 HTML은 <div class="container"> 안에 본문만 두고, 이 스크립트가 앞뒤를 채움
 import { initSearch } from '/scripts/search.js';
 
-const SITE_NAME = '도양록';
+export const SITE_NAME = '도양록';
 const COPYRIGHT = '© 2026 Raeyon Kim. All rights reserved.';
 
 // 이 너비 이상이면 컨테이너 오른쪽에 사이드바(검색창·목차)를 띄움

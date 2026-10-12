@@ -1,5 +1,7 @@
+import { SITE_NAME } from '/scripts/layout.js';
+
 const listEl = document.getElementById('post-list');
-const PAGE_TITLE = '<h1 class="page-title">대문</h1>';
+const PAGE_TITLE = `<h1 class="page-title">대문</h1><p class="page-intro">${SITE_NAME}에 오신 것을 환영합니다!</p>`;
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
