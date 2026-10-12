@@ -81,7 +81,7 @@
   color: var(--muted);
 }
 
-@media (max-width: 37.5rem) {
+@media (max-width: 37.49rem) {
   .page-title { font-size: 2rem; line-height: 2.5rem; }
   .post-title { font-size: 1.5rem; line-height: 2rem; }
   .post-card { max-width: calc(100vw - 2rem);}
