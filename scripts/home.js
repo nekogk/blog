@@ -1,4 +1,5 @@
 const listEl = document.getElementById('post-list');
+const PAGE_TITLE = '<h1 class="page-title">대문</h1>';
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -53,7 +54,7 @@ async function main() {
       .sort((a, b) => b.date.localeCompare(a.date) || b.path.localeCompare(a.path));
 
     if (!posts.length) {
-      listEl.innerHTML = '<p class="list-message">아직 올라온 글이 없습니다</p>';
+      listEl.innerHTML = PAGE_TITLE + '<p class="list-message">아직 올라온 글이 없습니다</p>';
       return;
     }
 
@@ -66,7 +67,7 @@ async function main() {
     }
 
     // 제목 카드를 먼저 그리고, 미리보기는 도착하는 대로 채운다
-    listEl.innerHTML = groups.map(g => {
+    listEl.innerHTML = PAGE_TITLE + groups.map(g => {
       const y = '20' + g.month.slice(0, 2), m = Number(g.month.slice(2));
       return `
       <section class="month">
@@ -88,7 +89,7 @@ async function main() {
 
     listEl.querySelectorAll('.post-preview').forEach(el => fillPreview(el, el.dataset.path));
   } catch (err) {
-    listEl.innerHTML = '<p class="list-message">글 목록을 불러오지 못했습니다</p>';
+    listEl.innerHTML = PAGE_TITLE + '<p class="list-message">글 목록을 불러오지 못했습니다</p>';
     console.error(err);
   }
 }

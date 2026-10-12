@@ -3,6 +3,7 @@
 
 import markdownit from 'https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/+esm';
 import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.mjs';
+import { setToc } from '/scripts/layout.js';
 
 const KATEX_CSS = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
 
@@ -214,6 +215,31 @@ function addHeadingIds(root) {
   }
 }
 
+// 본문 h2–h6에 1. 1.1. 1.2. … 번호를 붙임
+// 가장 높은 단계가 1. 2. 3. …, 단계를 건너뛰면(h2 다음 바로 h4) 한 단계 아래로만 취급
+// id는 번호 없는 제목으로 이미 정해졌으므로 [[글#제목]] 링크는 그대로 동작함
+// 목차(layout.js)는 data-num, data-depth, data-title을 읽어서 같은 번호를 씀
+function numberHeadings(root) {
+  const heads = [...root.querySelectorAll('h2, h3, h4, h5, h6')];
+  if (!heads.length) return;
+  const level = h => Number(h.tagName[1]);
+  const top = Math.min(...heads.map(level));
+  const counters = [];
+  for (const h of heads) {
+    const depth = Math.min(level(h) - top, counters.length);
+    counters.length = depth + 1;
+    counters[depth] = (counters[depth] ?? 0) + 1;
+    const num = counters.join('.') + '.';
+    h.dataset.num = num;
+    h.dataset.depth = depth;
+    h.dataset.title = h.textContent.trim();
+    const span = document.createElement('span');
+    span.className = 'heading-num';
+    span.textContent = num;
+    h.prepend(span, ' ');
+  }
+}
+
 function formatDate(iso) {
   const [y, m, d] = iso.split('-').map(Number);
   return `${y}년 ${m}월 ${d}일`;
@@ -261,6 +287,7 @@ async function main() {
     const bodyEl = root.querySelector('.article-body');
     buildCallouts(bodyEl);
     addHeadingIds(bodyEl);
+    numberHeadings(bodyEl);
 
     // 표와 긴 수식이 화면 밖으로 넘치지 않게 감싼다
     for (const t of bodyEl.querySelectorAll('table')) {
@@ -269,6 +296,8 @@ async function main() {
       t.replaceWith(wrap);
       wrap.append(t);
     }
+
+    setToc(bodyEl);
 
     if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
   } catch (err) {
