@@ -217,7 +217,7 @@ function addHeadingIds(root) {
 
 // 본문 h2–h6에 1. 1.1. 1.2. … 번호를 붙임
 // 가장 높은 단계가 1. 2. 3. …, 단계를 건너뛰면(h2 다음 바로 h4) 한 단계 아래로만 취급
-// id는 번호(1, 2.4)로 바꾸고, 제목으로 만든 원래 id는 data-slug에 남겨서 [[글#제목]] 링크가 계속 동작하게 함
+// id는 번호로 바꾸고, 제목으로 만든 원래 id는 data-slug에 남겨서 [[글#제목]] 링크가 계속 동작하게 함
 // 목차(layout.js)는 data-num, data-depth, data-title을 읽어서 같은 번호를 씀
 function numberHeadings(root) {
   const heads = [...root.querySelectorAll('h2, h3, h4, h5, h6')];
