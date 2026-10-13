@@ -68,6 +68,7 @@
   --panel: #222222;
   --glass: #333333;
   --glass-hover: #444444;
+  --glass-active: #eabf8c33;
   --line: #555555;
   --muted: #999999;
   --text: #ffffff;
@@ -81,7 +82,25 @@
   --mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
   color-scheme: dark;
-  scrollbar-color: var(--panel) transparent;
+  scrollbar-color: var(--line) transparent;
+  transition: background 0.2s ease, scrollbar-color 0.2s ease;
+}
+
+:root[data-theme="light"] {
+  --bg: #eeeeee;
+  --panel: #f8f8f8;
+  --glass: #ffffff;
+  --glass-hover: #dddddd;
+  --glass-active: #b68d5b33;
+  --line: #cccccc;
+  --muted: #777777;
+  --text: #111111;
+  --green: #61c26c;
+  --beige: #b68d5b;
+  --coral: #ed7457;
+  --pink: #c287e0;
+
+  color-scheme: light;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -101,6 +120,7 @@ body {
   line-height: 1.5rem;
   word-break: normal;
   overflow-wrap: anywhere;
+  transition: background 0.2s ease;
 }
 
 .container {
@@ -109,8 +129,9 @@ body {
   margin: 0 auto;
   padding: 2rem;
   background: var(--panel);
-  scrollbar-color: var(--glass) transparent;
+  scrollbar-color: var(--line) transparent;
   font-family: var(--sans-font);
+  transition: background 0.2s ease, scrollbar-color 0.2s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -170,7 +191,7 @@ a:focus-visible {
   right: 0;
   z-index: 100;
   width: 100%;
-  max-height: calc(50vh - 5rem);
+  max-height: calc(50vh - 5.5rem);
   overflow-y: auto;
   margin: 0;
   padding: 0;
@@ -178,7 +199,7 @@ a:focus-visible {
   background: var(--glass);
   border: 1px solid var(--line);
   border-radius: 1rem;
-  scrollbar-color: var(--glass-hover) transparent;
+  scrollbar-color: var(--line) transparent;
 }
 
 .site-search-list[hidden] { display: none; }
@@ -236,6 +257,37 @@ footer {
   font-family: var(--sans-font);
 }
 
+/* ── 테마 버튼 (사이드바 안이라 64rem 이상에서만 보임) ── */
+.theme-btn {
+  width: 4rem;
+  height: 2rem;
+  text-align: center;
+  white-space: nowrap;
+  font-family: var(--sans-font);
+  font-size: 1rem;
+  background: var(--glass);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  outline: 0;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-btn:hover {
+  background: var(--glass-hover);
+}
+
+.theme-btn:focus { border-color: var(--beige); }
+
+.theme-btn.active {
+  background: var(--glass-active);
+  border-color: var(--beige);
+  color: var(--text);
+}
+
 /* ── 사이드바 (64rem 이상에서만 표시) ── */
 .site-side {
   display: none; 
@@ -263,6 +315,7 @@ footer {
     padding-left: 0;
     width: 16rem;
     background: var(--panel);
+    transition: background 0.2s ease;
   }
 
   .site-side-inner {
@@ -276,6 +329,12 @@ footer {
 
   .site-side-search { flex: none; }
 
+  .site-theme {
+    flex: none;
+    display: flex;
+    gap: 1rem;
+  }
+
   .site-search-list {
     position: relative;
     margin-top: 1rem;
@@ -287,8 +346,9 @@ footer {
     background: var(--glass);
     border: 1px solid var(--line);
     border-radius: 1rem;
-    scrollbar-color: var(--glass-hover) transparent;
+    scrollbar-color: var(--line) transparent;
     font-family: var(--sans-font);
+    transition: background 0.2s ease, border-color 0.2s ease, scrollbar-color 0.2s ease;
   }
 
   .site-toc[hidden] { display: none; }
@@ -333,7 +393,6 @@ footer {
 
 @media (max-width: 47.99rem) {
   body, html { background: var(--panel); }
-  :root { scrollbar-color: var(--glass) transparent; }
   .container { padding: 1rem ;}
   .site-search { width: calc(50vw - 1rem); }
 }
