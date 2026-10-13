@@ -105,7 +105,7 @@ export function initSearch(header) {
     list.innerHTML = results.length
       ? results.map((r, i) => `
         <li id="site-search-opt-${i}" class="site-search-item" role="option" aria-selected="false">
-          <a href="${r.url}">${highlight(r.title, term)}</a>
+          <a href="${r.url}"><span class="site-search-title">${highlight(r.title, term)}</span></a>
         </li>`).join('')
       : '';
     list.hidden = results.length ? false : true;
