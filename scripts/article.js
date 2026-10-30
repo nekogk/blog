@@ -86,7 +86,7 @@ function escapeHtml(s) {
 
 const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif|bmp)$/i;
 
-// [[2609/fourier/article#제목|표시]] 의 대상 → 사이트 주소
+// [[2026/fourier/article#제목|표시]] 의 대상 → 사이트 주소
 function resolveWikiTarget(target) {
   const [pathPart, heading] = target.split('#');
   const hash = heading ? '#' + headingId(heading) : '';
@@ -293,7 +293,7 @@ async function main() {
     document.head.append(link);
   }
 
-  const base = location.pathname.replace(/\/?$/, '/');   // 항상 "/2609/fourier/" 형태
+  const base = location.pathname.replace(/\/?$/, '/');   // 항상 "/2026/fourier/" 형태
   const key = base.replace(/\/$/, '');
 
   try {

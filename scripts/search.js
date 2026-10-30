@@ -9,7 +9,7 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
-// 키를 항상 "/2609/fourier/" 꼴로
+// 키를 항상 "/2026/fourier/" 꼴로
 const normalizePath = key => '/' + key.replace(/^\/+|\/+$/g, '') + '/';
 
 // 인덱스는 처음 필요할 때 한 번만 불러옴 → [{ title, url, key }]

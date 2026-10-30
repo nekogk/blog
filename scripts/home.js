@@ -8,7 +8,7 @@ function escapeHtml(s) {
 }
 
 function normalizePath(key) {
-  return ('/' + key.replace(/^\/+|\/+$/g, '') + '/');   // 항상 "/2609/fourier/"
+  return ('/' + key.replace(/^\/+|\/+$/g, '') + '/');   // 항상 "/2026/fourier/"
 }
 
 function buildPreview(src) {
@@ -50,7 +50,7 @@ async function main() {
     const posts = Object.entries(data)
       .map(([key, info]) => {
         const path = normalizePath(key);
-        return { path, month: path.split('/')[1], title: info.title, date: info.date };
+        return { path, year: path.split('/')[1], title: info.title, date: info.date };
       })
       // 날짜 내림차순, 같은 날이면 경로 역순
       .sort((a, b) => b.date.localeCompare(a.date) || b.path.localeCompare(a.path));
@@ -60,27 +60,26 @@ async function main() {
       return;
     }
 
-    // 정렬 순서를 유지하며 달별로 묶기
+    // 정렬 순서를 유지하며 해별로 묶기 (폴더 이름 = 연도)
     const groups = [];
     for (const p of posts) {
       const last = groups[groups.length - 1];
-      if (last && last.month === p.month) last.posts.push(p);
-      else groups.push({ month: p.month, posts: [p] });
+      if (last && last.year === p.year) last.posts.push(p);
+      else groups.push({ year: p.year, posts: [p] });
     }
 
     // 제목 카드를 먼저 그리고, 미리보기는 도착하는 대로 채운다
     listEl.innerHTML = PAGE_TITLE + groups.map(g => {
-      const y = '20' + g.month.slice(0, 2), m = Number(g.month.slice(2));
       return `
-      <section class="month">
-        <h2 class="month-code"><time datetime="${y}-${g.month.slice(2)}">${y}년 ${m}월</time></h2>
-        <ol class="month-posts">
+      <section class="year">
+        <h2 class="year-code"><time datetime="${g.year}">${g.year}년</time></h2>
+        <ol class="year-posts">
           ${g.posts.map(p => `
           <li>
             <a class="post-card" href="${p.path}">
               <div class="post-head">
                 <h3 class="post-title">${escapeHtml(p.title)}</h3>
-                <time class="post-date" datetime="${p.date}">${Number(p.date.slice(8, 10))}일</time>
+                <time class="post-date" datetime="${p.date}">${p.date.slice(5, 7)}.${p.date.slice(8, 10)}</time>
               </div>
               <p class="post-preview" data-path="${p.path}"></p>
             </a>
